@@ -13,7 +13,7 @@ A tricky DNS server runs only in local to anti DNS response cheat from GFW.
 
 使用方法，以Linux为例：
 
-`# nohup ./trickydns trickydns.config.json &`
+`[root@localhost ~]# nohup ./trickydns trickydns.config.json &`
 
 即可在本机开启一个无污染的DNS服务。
 

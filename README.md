@@ -10,3 +10,11 @@ A tricky DNS server runs only in local to anti DNS response cheat from GFW.
 技术细节：
 
 经过测试，现在GFW最多只能处理17个级联指针，超过17个指针后GFW便不再对此DNS请求再进行处理，可能是为了避免循环指针导致死循环或消耗太多资源。trickydns通过改造DNS请求，将原始域名移动位置，再通过18个以上的级联指针指向原始域名，从而避免了GFW发送伪造的DNS响应。
+
+使用方法，以Linux为例：
+
+`# nohup ./trickydns trickydns.config.json &`
+
+即可在本机开启一个无污染的DNS服务。
+
+trickydns.config.json文件的配置例子可以查看： https://github.com/lehui99/trickydns/blob/master/trickydns.config.json

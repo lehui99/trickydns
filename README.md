@@ -6,3 +6,7 @@ A tricky DNS server runs only in local to anti DNS response cheat from GFW.
 由于不需要判断获得的DNS响应是否是伪造的，所以比通过DNS响应的先后顺序来丢弃伪造的响应更稳定一些。
 
 解决了DNS污染后能直接访问的网站有github gist、feedly等，加上 https://github.com/bypass-GFW-SNI/proxy 后能直接访问的网站有wikipedia、pixiv等。欢迎在Issues里补充。
+
+技术细节：
+
+经过测试，现在GFW最多只能处理17个级联指针，超过17个指针后GFW便不再对此DNS请求再进行处理，可能是为了避免循环指针导致死循环或消耗太多资源。trickydns通过改造DNS请求，将原始域名移动位置，再通过18个以上的级联指针指向原始域名，从而避免了GFW发送伪造的DNS响应。

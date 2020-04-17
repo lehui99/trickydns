@@ -1,0 +1,7 @@
+{
+    "BindAddr": "0.0.0.0:53",
+    "Servers": ["8.8.8.8:53", "1.1.1.1:53"],
+    "Timeout": 5,
+    "ExtraPtrs": 18,
+    "BufSize": 2048
+}
